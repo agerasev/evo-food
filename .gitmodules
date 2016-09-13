@@ -1,0 +1,9 @@
+[submodule "libgenn-qt"]
+	path = libgenn-qt
+	url = https://github.com/nthend/libgenn-qt.git
+[submodule "libworld2d-qt"]
+	path = libworld2d-qt
+	url = https://github.com/nthend/libworld2d-qt.git
+[submodule "libla"]
+	path = libla
+	url = https://github.com/nthend/libla.git
