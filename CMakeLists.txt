@@ -18,7 +18,7 @@ endif()
 set(LIBLA "libla" CACHE INTERNAL "")
 include_directories(${LIBLA})
 
-include_directories(${QT5_INCLUDE} ${QT5_INCLUDE}/QtWidgets ${QT5_INCLUDE}/QtCore)
+include_directories(${QT5_INCLUDE} ${QT5_INCLUDE}/QtWidgets ${QT5_INCLUDE}/QtCore ${QT5_INCLUDE}/QtGui)
 link_directories(${QT5_LINK})
 
 add_subdirectory(libworld2d-qt)
