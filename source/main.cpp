@@ -32,17 +32,33 @@ public:
 
 int main(int argc, char *argv[]) {
 	World world(vec2(10, 10));
-	world.add(new Entity());
+	Entity *e;
+	
+	e = new Entity();
+	e->pos = vec2(-4, -5);
+	e->vel = vec2(1, 2);
+	world.add(e);
+	
+	e = new Entity();
+	e->pos = vec2(4, 4);
+	e->vel = vec2(-2, -1);
+	world.add(e);
 	
 	QApplication app(argc, argv);
 	
 	Window window(world);
 	window.show();
 	
-	window.scene.sync();
-	window.scene.update();
+	window.scene.start();
+
+	std::thread thread([&world](){world.run();});
 
 	int rs = app.exec();
 
+	world.done = true;
+	thread.join();
+	
+	window.scene.stop();
+	
 	return rs;
 }
